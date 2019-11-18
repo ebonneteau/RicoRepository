@@ -12,6 +12,8 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
+//Added missing Static import fro calculateDiff
+import static androidx.recyclerview.widget.DiffUtil.calculateDiff;
 
 public class UserListAdapter extends RecyclerView.Adapter<ListUserViewHolder> {
 
@@ -50,7 +52,7 @@ public class UserListAdapter extends RecyclerView.Adapter<ListUserViewHolder> {
     // PUBLIC API ---
 
     public void updateList(List<User> newList) {
-        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new UserDiffCallback(newList, this.users));
+        DiffUtil.DiffResult diffResult = calculateDiff(new UserDiffCallback(newList, this.users));
         this.users = new ArrayList<>(newList);
         diffResult.dispatchUpdatesTo(this);
     }
