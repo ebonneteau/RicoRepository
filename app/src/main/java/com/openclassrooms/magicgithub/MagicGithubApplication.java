@@ -11,15 +11,16 @@ public class MagicGithubApplication extends Application {
 
     private UserRepository userRepository;
 
+
     // ---
 
     public UserRepository getUserRepository() {
-        if (userRepository == null) userRepository = Injection.createUserRepository();
-        return userRepository;
+        if (userRepository == (null)) userRepository = Injection.createUserRepository();
+        return Injection.createUserRepository(); //@Rico turned "null" into a non null value
     }
 
     @VisibleForTesting
-    public void resetUserRepository() {
+    public void resetUserRepository () {
         userRepository = null;
     }
 }
