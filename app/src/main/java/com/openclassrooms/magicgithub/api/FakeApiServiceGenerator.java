@@ -5,6 +5,7 @@ import com.openclassrooms.magicgithub.model.User;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 public abstract class FakeApiServiceGenerator {
@@ -12,6 +13,7 @@ public abstract class FakeApiServiceGenerator {
 
     static List<User> generateUsers() {
         return new ArrayList<>(FAKE_USERS);
+
     }
 
     public static List<User> FAKE_USERS = Arrays.asList(
