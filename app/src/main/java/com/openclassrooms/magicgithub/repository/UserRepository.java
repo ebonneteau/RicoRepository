@@ -1,17 +1,16 @@
 package com.openclassrooms.magicgithub.repository;
 
 import com.openclassrooms.magicgithub.api.ApiService;
-import com.openclassrooms.magicgithub.api.FakeApiServiceGenerator;
 import com.openclassrooms.magicgithub.model.User;
 
 import java.util.List;
 
 
 
-public class UserRepository implements ApiService{
+public class UserRepository {
 
 
-    private final ApiService apiService; // TODO: A utiliser
+    private final ApiService apiService;
 
     public UserRepository(ApiService apiService) {
         this.apiService = apiService;
@@ -23,8 +22,7 @@ public class UserRepository implements ApiService{
 
     public void generateRandomUser() {
 
-        User.random();
-        getUsers().add(User.random());
+        apiService.generateRandomUser();
 
 
 
@@ -32,7 +30,7 @@ public class UserRepository implements ApiService{
     }
 
     public void deleteUser(User user) {
-        apiService.deleteUser(user);
+        apiService.deleteUser( user );
 
     }
 }
