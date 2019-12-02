@@ -5,10 +5,7 @@ import com.openclassrooms.magicgithub.model.User;
 
 import java.util.List;
 
-
-
 public class UserRepository {
-
 
     private final ApiService apiService;
 
@@ -21,16 +18,10 @@ public class UserRepository {
     }
 
     public void generateRandomUser() {
-
         apiService.generateRandomUser();
-
-
-
-
     }
 
     public void deleteUser(User user) {
         apiService.deleteUser( user );
-
     }
 }
